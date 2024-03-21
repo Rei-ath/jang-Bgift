@@ -1,9 +1,10 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vitest/config';
+import { defineConfig } from 'vite';
+import mkcert from 'vite-plugin-mkcert';
 
 export default defineConfig({
-	plugins: [sveltekit()],
-	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}']
+	plugins: [mkcert(), sveltekit()],
+	ssr: {
+		noExternal: ['three']
 	}
 });
