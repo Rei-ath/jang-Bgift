@@ -13,5 +13,10 @@
 <Camera />
 <Lights />
 {#if roomVisible}
-<Room />
+{#await Room}
+  <p>LET IT LOADDDD JANG</p>
+{:then Room} 
+  <Room />
+{/await}
+
 {/if}
